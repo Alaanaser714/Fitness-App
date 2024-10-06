@@ -1,4 +1,4 @@
-import 'package:fitness_app/data/model/onboarding_model.dart';
+import 'package:fitness_app/core/data/model/onboarding_model.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(

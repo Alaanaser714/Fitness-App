@@ -13,10 +13,15 @@ class SettingOptions extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromARGB(255, 25, 26, 29),
-          Color.fromARGB(255, 36, 38, 42)
-        ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 25, 26, 29),
+              Color.fromARGB(255, 36, 38, 42)
+            ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -76,7 +81,7 @@ class SettingOptions extends StatelessWidget {
                             child: const Text('Cancel')),
                         TextButton(
                             onPressed: () {
-                              //put the logout logic here ya Abo Alaa
+                              //put the logout logic here ya Abo Alsead
                             },
                             child: const Text(
                               'Log Out',

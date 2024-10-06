@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
-import 'package:fitness_app/view/screens/onboarding_view.dart';
+import 'package:fitness_app/view/screens/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff353A40),
+        backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         body: Center(
           child: Column(
             children: [

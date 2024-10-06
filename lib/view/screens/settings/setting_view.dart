@@ -14,7 +14,7 @@ class SettingPage extends StatelessWidget {
             'Setting',
             style: TextStyle(
               color: Color.fromARGB(255, 161, 161, 170),
-              fontSize: 18,
+              fontSize: 25,
             ),
           ),
         ),
@@ -23,3 +23,6 @@ class SettingPage extends StatelessWidget {
     );
   }
 }
+
+
+// هتعمل الكلام اللي جوه كل صفحه وهتعمل اب بار باسم الصفحه
