@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "639831898399",
+    "project_id": "depi-sports-project",
+    "storage_bucket": "depi-sports-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639831898399:android:7815366169bba6ad85d82a",
+        "android_client_info": {
+          "package_name": "com.example.depi_fitness_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639831898399-fviha66u8ap72gshpdimalfuuvvr82rc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.depi_fitness_project",
+            "certificate_hash": "1a45de594d002130f55251ff904d9187ebbe385e"
+          }
+        },
+        {
+          "client_id": "639831898399-ivihebbsonhb7tnbap2cog5n7rqkouqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4wCBSpSHRqB5f9KMWJmbtdjW710pMbbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639831898399-ivihebbsonhb7tnbap2cog5n7rqkouqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "639831898399-8rfdu093554rjbqfbgsq7pmp77r2u40q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.depiFitnessProject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639831898399:android:afa265e055fbbc2e85d82a",
+        "android_client_info": {
+          "package_name": "com.example.fitness_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639831898399-ivihebbsonhb7tnbap2cog5n7rqkouqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4wCBSpSHRqB5f9KMWJmbtdjW710pMbbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639831898399-ivihebbsonhb7tnbap2cog5n7rqkouqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "639831898399-8rfdu093554rjbqfbgsq7pmp77r2u40q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.depiFitnessProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

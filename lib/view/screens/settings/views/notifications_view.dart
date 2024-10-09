@@ -8,10 +8,16 @@ class NotificationsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+        title: const Text(
+          'Notificatios',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      
     );
   }
 }
