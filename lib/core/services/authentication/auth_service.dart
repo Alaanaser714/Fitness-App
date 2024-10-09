@@ -1,3 +1,5 @@
+
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -79,4 +81,17 @@ return userCredential;
   Future<void> signOut() async {
   await firebaseAuth.signOut();
 }
+
+  Future<bool> checkIfEmailExists(String email) async {
+    try {
+      // Fetch sign-in methods for the email
+      List<String> signInMethods = await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
+
+      // If the list is not empty, the email exists
+      return signInMethods.isNotEmpty;
+    } catch (e) {
+      print('Error checking if email exists: $e');
+      return false;
+    }
+  }
 }

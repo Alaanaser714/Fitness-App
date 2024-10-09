@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
-import '../services/authentication/auth_service.dart';
+import '../../../core/services/authentication/auth_service.dart';
 
 class Home extends StatelessWidget {
    Home({super.key});
@@ -11,9 +12,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
         actions: [
-          TextButton(onPressed: auth.signOut, child: Text("sign out"))
+          TextButton(onPressed: auth.signOut, child: const Text("sign out"))
         ],
       ),
     );

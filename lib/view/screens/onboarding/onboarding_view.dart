@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:fitness_app/data/data_source/static.dart';
-import 'package:fitness_app/view/screens/login_screen.dart';
+import 'package:fitness_app/core/data/data_source/static.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/services/authentication/auth_gate.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -32,7 +33,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff353A40),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       body: Column(
         children: [
           Expanded(
@@ -96,7 +97,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
+                      builder: (context) => AuthGate(),
                     ));
               }
               mycontroller!.nextPage(

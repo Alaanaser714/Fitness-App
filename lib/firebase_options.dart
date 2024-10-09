@@ -60,8 +60,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '639831898399',
     projectId: 'depi-sports-project',
     storageBucket: 'depi-sports-project.appspot.com',
-    androidClientId: '639831898399-4n0eua3qmcm5709l6tmlq0q8iqpq6mod.apps.googleusercontent.com',
-    iosClientId: '639831898399-noh4bcch8pkvurjrrl0shtbc01rrs9ac.apps.googleusercontent.com',
     iosBundleId: 'com.example.fitnessApp',
   );
 
