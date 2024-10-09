@@ -5,8 +5,11 @@ import 'package:fitness_app/view/screens/settings/views/notifications_view.dart'
 import 'package:fitness_app/view/screens/settings/setting_widgets/setting_types.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/services/authentication/auth_service.dart';
+
 class SettingOptions extends StatelessWidget {
-  const SettingOptions({
+  AuthService auth = AuthService();
+  SettingOptions({
     super.key,
   });
 
@@ -124,7 +127,8 @@ class SettingOptions extends StatelessWidget {
                           ),
                           TextButton(
                               onPressed: () {
-                                //put the logout logic here ya Abo Alsead
+                                auth.signOut();
+                                Navigator.pop(context);
                               },
                               child: const Text(
                                 'Log Out',

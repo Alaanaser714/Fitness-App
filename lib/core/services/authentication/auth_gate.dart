@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../view/screens/home/home.dart';
 import '../../../view/screens/auth/login.dart';
+import '../../../view/screens/settings/setting_options/setting_options.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -18,7 +19,7 @@ class AuthGate extends StatelessWidget {
           builder: (context, snapshot) {
             if(snapshot.hasData)
               if (FirebaseAuth.instance.currentUser!.emailVerified) {
-                return Home();
+                return SettingOptions();
               }
               return const Login_Screen();
           },) ,

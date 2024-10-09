@@ -94,11 +94,13 @@ class _OnboardingViewState extends State<OnboardingView> {
           GestureDetector(
             onTap: () {
               if (currentPage == onBoardingList.length - 1) {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => AuthGate(),
-                    ));
+                    ),
+                (route) => false,
+                );
               }
               mycontroller!.nextPage(
                   duration: Duration(milliseconds: 100),

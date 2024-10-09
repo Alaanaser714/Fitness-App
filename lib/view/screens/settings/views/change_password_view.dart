@@ -1,3 +1,8 @@
+import 'dart:async';
+
+import 'package:fitness_app/core/services/authentication/auth_gate.dart';
+import 'package:fitness_app/core/services/authentication/auth_service.dart';
+import 'package:fitness_app/core/shared/componans.dart';
 import 'package:flutter/material.dart';
 
 class ChangePasswordView extends StatefulWidget {
@@ -9,8 +14,8 @@ class ChangePasswordView extends StatefulWidget {
 
 class _ChangePasswordViewState extends State<ChangePasswordView> {
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+  AuthService auth=AuthService();
 
   void _checkPasswords() {
     String newPassword = _newPasswordController.text;
@@ -21,9 +26,15 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
       _showMessage("Please fill in both fields.");
     } else if (newPassword == confirmPassword) {
       _showMessage("Passwords match. Proceeding to save...");
-      // حط هنا يا سيد اللوجيك بتاع تغيير الباسورد
+      Timer(Duration(seconds: 2), () {
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => AuthGate(),), (route) => false,);
+        auth.updatePassword(newPassword).then((onValue){
+          defaultToast('Password Changed', Colors.green);
+        }).catchError((onError){
+          defaultToast('failed !', Colors.red);
+        });
+      });
 
-      Navigator.pop(context);
     } else {
       _showMessage("Passwords do not match. Please try again.");
     }
@@ -31,7 +42,9 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
 
   void _showMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
+      SnackBar(content: Text(message),
+          duration: Duration(seconds: 2),
+      ),
     );
   }
 
