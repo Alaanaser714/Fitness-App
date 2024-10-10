@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:fitness_app/view/screens/settings/views/account_view.dart';
 import 'package:fitness_app/view/screens/settings/views/feedback_view.dart';
 import 'package:fitness_app/view/screens/settings/views/help_view.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:fitness_app/core/services/authentication/auth_gate.dart';
@@ -26,8 +28,8 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
       _showMessage("Please fill in both fields.");
     } else if (newPassword == confirmPassword) {
       _showMessage("Passwords match. Proceeding to save...");
-      Timer(Duration(seconds: 2), () {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => AuthGate(),), (route) => false,);
+      Timer(const Duration(seconds: 2), () {
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const AuthGate(),), (route) => false,);
         auth.updatePassword(newPassword).then((onValue){
           defaultToast('Password Changed', Colors.green);
         }).catchError((onError){
@@ -43,7 +45,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
   void _showMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message),
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
       ),
     );
   }

@@ -30,7 +30,7 @@ class AccountView extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  CheckPasswordView(),
+                    builder: (context) =>  const CheckPasswordView(),
                   ),
                 ),
                 child: getSettingType(icon: Icons.password, text: 'Password'),

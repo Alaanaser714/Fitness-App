@@ -3,8 +3,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../../../view/screens/home/home.dart';
 import '../../../view/screens/auth/login.dart';
 import '../../../view/screens/settings/setting_options/setting_options.dart';
 

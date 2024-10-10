@@ -1,7 +1,8 @@
+// ignore_for_file: file_names, use_build_context_synchronously
+
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/core/services/authentication/auth_service.dart';
-import 'package:fitness_app/main.dart';
 import 'package:fitness_app/view/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Column(
@@ -36,7 +37,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.04,
             ),
-            Text(
+            const Text(
               "return your password :",
               style: TextStyle(
                   fontSize: 25,
@@ -71,7 +72,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -97,7 +98,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                           desc:
                           'Please Enter your first!! ',
                           btnCancelOnPress: () {
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login_Screen(),), (route) => false,);
+                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Login_Screen(),), (route) => false,);
                           },
                           btnOkOnPress: () {})
                           .show();
@@ -116,12 +117,12 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             await FirebaseAuth.instance
                                 .sendPasswordResetEmail(
                                 email: _emailcontroller.text);
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login_Screen(),), (route) => false,);
+                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Login_Screen(),), (route) => false,);
                           })
                           .show();
                     }
                   },
-                  child: Text(
+                  child: const Text(
                     "continue",
                     style: TextStyle(
                         fontSize: 20,

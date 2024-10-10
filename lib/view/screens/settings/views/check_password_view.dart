@@ -1,9 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+
 import 'package:fitness_app/core/services/authentication/auth_service.dart';
 import 'package:fitness_app/view/screens/settings/views/change_password_view.dart';
 import 'package:flutter/material.dart';
 
 class CheckPasswordView extends StatefulWidget {
-   CheckPasswordView({super.key});
+   const CheckPasswordView({super.key});
 
   @override
   _CheckPasswordViewState createState() => _CheckPasswordViewState();

@@ -1,7 +1,5 @@
 // ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
-
 import '../../../core/services/authentication/auth_service.dart';
 
 class Home extends StatelessWidget {
