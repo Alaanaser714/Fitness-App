@@ -22,26 +22,23 @@ class AccountView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: Column(
-            children: [
-              InkWell(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>  const CheckPasswordView(),
-                  ),
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CheckPasswordView(),
                 ),
-                child: getSettingType(icon: Icons.password, text: 'Password'),
               ),
-              const Divider(
-                color: Colors.white,
-                indent: 35,
-                thickness: 0.2,
-              )
-            ],
-          ),
+              child: getSettingType(icon: Icons.password, text: 'Password'),
+            ),
+            const Divider(
+              color: Colors.white,
+              indent: 35,
+              thickness: 0.2,
+            )
+          ],
         ),
       ),
     );

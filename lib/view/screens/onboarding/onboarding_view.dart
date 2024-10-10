@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:fitness_app/core/data/data_source/static.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/services/authentication/auth_gate.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -56,7 +54,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         fit: BoxFit.cover,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: MediaQuery.of(context).size.height * .02,
                       ),
                       Text(
                         onBoardingList[i].title!,
@@ -89,17 +87,17 @@ class _OnboardingViewState extends State<OnboardingView> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: MediaQuery.of(context).size.height * .02,
           ),
           GestureDetector(
             onTap: () {
               if (currentPage == onBoardingList.length - 1) {
                 Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AuthGate(),
-                    ),
-                (route) => false,
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AuthGate(),
+                  ),
+                  (route) => false,
                 );
               }
               mycontroller!.nextPage(
@@ -115,7 +113,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: MediaQuery.of(context).size.height * .04,
           )
         ],
       ),

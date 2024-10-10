@@ -5,7 +5,7 @@ import 'package:fitness_app/view/screens/settings/views/change_password_view.dar
 import 'package:flutter/material.dart';
 
 class CheckPasswordView extends StatefulWidget {
-   const CheckPasswordView({super.key});
+  const CheckPasswordView({super.key});
 
   @override
   _CheckPasswordViewState createState() => _CheckPasswordViewState();
@@ -13,10 +13,13 @@ class CheckPasswordView extends StatefulWidget {
 
 class _CheckPasswordViewState extends State<CheckPasswordView> {
   final TextEditingController _passwordController = TextEditingController();
-  AuthService auth=AuthService();
+  AuthService auth = AuthService();
 
   void validatePassword() {
-    auth.reauthenticateUser(auth.getCurrentUser()!.email.toString(), _passwordController.text).then((onValue){
+    auth
+        .reauthenticateUser(
+            auth.getCurrentUser()!.email.toString(), _passwordController.text)
+        .then((onValue) {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
@@ -24,10 +27,9 @@ class _CheckPasswordViewState extends State<CheckPasswordView> {
         ),
         (route) => false,
       );
-    }).catchError((onError){
+    }).catchError((onError) {
       _showErrorMessage("Incorrect password. Please try again.");
     });
-
   }
 
   void _showErrorMessage(String message) {
@@ -53,10 +55,6 @@ class _CheckPasswordViewState extends State<CheckPasswordView> {
       ),
       body: Column(
         children: [
-          const Divider(
-            color: Colors.white,
-            thickness: 0.4,
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Center(
