@@ -48,7 +48,7 @@ class SettingOptions extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const AccountView()),
+                        builder: (context) =>  AccountView()),
                   ),
                   child: getSettingType(icon: Icons.person, text: 'Account'),
                 ),
@@ -84,7 +84,7 @@ class SettingOptions extends StatelessWidget {
                     onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const FeedbackView(),
+                            builder: (context) =>  FeedbackView(),
                           ),
                         ),
                     child:

@@ -124,4 +124,20 @@ return userCredential;
 
 
   }
-}
+
+  Map checkSignInMethod() {
+    User? user = firebaseAuth.currentUser;
+
+
+      for (UserInfo provider in user!.providerData) {
+        print('Provider ID: ${provider.providerId}');
+        print('Email: ${provider.email}');
+        print('Display Name: ${provider.displayName}');
+        return {
+          'providerId':provider.providerId,
+          'email':provider.email,
+        };
+      }
+     return {};
+
+}}
