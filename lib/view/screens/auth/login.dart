@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, camel_case_types, non_constant_identifier_names, avoid_types_as_parameter_names, sized_box_for_whitespace
 
+
+import 'package:fitness_app/view/screens/auth/forgetPassword.dart';
 import 'package:fitness_app/view/screens/auth/register.dart';
 import 'package:flutter/material.dart';
 import '../../../core/services/authentication/auth_gate.dart';
@@ -116,8 +118,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          //باسم هتخلي لما يدوس يروح صفحه جديده فيها اب بار ويدخل الايميل بتاعه(هتعمل الشكل بس)
-                          // سيد هتربط الايميل مع الفاير بيز
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPassword(),));
                         },
                         child: const Text("Forget password?",
                             style:
@@ -223,25 +224,29 @@ class _Login_ScreenState extends State<Login_Screen> {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(width: 1, color: Colors.orange)),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.apple,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            // سيد هتشيل دي وتحط الموبيل وتلربط فاير بيز
-                            "Apple ID",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          )
-                        ],
+                      child: InkWell(
+                        onTap: () {
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.apple,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              // سيد هتشيل دي وتحط الموبيل وتلربط فاير بيز
+                              "Apple ID",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            )
+                          ],
+                        ),
                       )),
                   const SizedBox(
                     height: 10,

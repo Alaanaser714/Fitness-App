@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, body_might_complete_normally_catch_error
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -81,4 +81,45 @@ return userCredential;
   Future<void> signOut() async {
   await firebaseAuth.signOut();
 }
+
+  Future<bool> checkIfEmailExists(String email) async {
+    try {
+      // Fetch sign-in methods for the email
+      List<String> signInMethods = await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
+
+      // If the list is not empty, the email exists
+      return signInMethods.isNotEmpty;
+    } catch (e) {
+      print('Error checking if email exists: $e');
+      return false;
+    }
+  }
+
+  Future<bool> updatePassword(String newPassword) async {
+    User? user = firebaseAuth.currentUser;
+
+    if (user != null) {
+
+        await user.updatePassword(newPassword).then((onValue){
+          return true;
+        }).catchError((onError){
+          print(onError.toString());
+        });
+
+    }
+    return false;
+  }
+
+  Future<UserCredential> reauthenticateUser(String email, String password) async {
+    User? user = FirebaseAuth.instance.currentUser;
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+
+       return await user!.reauthenticateWithCredential(credential).then((onValue){
+          return onValue;
+        }).catchError((onError){
+         print(onError.toString());
+        });
+
+
+  }
 }
