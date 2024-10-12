@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:fitness_app/core/services/authentication/auth_gate.dart';
+import 'package:fitness_app/view/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/services/authentication/auth_service.dart';
@@ -130,7 +132,13 @@ class SettingOptions extends StatelessWidget {
                           TextButton(
                               onPressed: () {
                                 auth.signOut();
-                                Navigator.pop(context);
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const AuthGate(),
+                                  ),
+                                  (route) => false,
+                                );
                               },
                               child: const Text(
                                 'Log Out',
