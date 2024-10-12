@@ -31,34 +31,7 @@ class SettingOptions extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 30,
-              ),
-              child: Column(
-                children: [
-                  InkWell(
-                    //Acount page
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AccountView()),
-                    ),
-                    child: getSettingType(icon: Icons.person, text: 'Account'),
-                  ),
-                  const Divider(
-                    color: Colors.white,
-                    thickness: 0.2,
-                    indent: 35,
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  InkWell(
-                    //Help page
+
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
