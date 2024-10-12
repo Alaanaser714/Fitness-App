@@ -33,7 +33,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
         auth.updatePassword(newPassword).then((onValue){
           defaultToast('Password Changed', Colors.green);
         }).catchError((onError){
-          defaultToast('failed !', Colors.red);
+          defaultToast('failed!', Colors.red);
         });
       });
 

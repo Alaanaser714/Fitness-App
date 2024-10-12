@@ -9,7 +9,7 @@ class NotificationsView extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
         title: const Text(
-          'Notificatios',
+          'Notifications',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
