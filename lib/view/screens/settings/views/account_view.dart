@@ -1,11 +1,14 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:fitness_app/core/services/authentication/auth_service.dart';
 import 'package:fitness_app/view/screens/settings/setting_widgets/setting_types.dart';
+
 import 'package:fitness_app/view/screens/settings/views/check_password_view.dart';
 import 'package:flutter/material.dart';
 
 class AccountView extends StatelessWidget {
-   AccountView({super.key});
-  AuthService auth=AuthService();
+  AccountView({super.key});
+  AuthService auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -28,35 +31,35 @@ class AccountView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
             children: [
-              auth.checkSignInMethod()['providerId']=='google.com'?
-               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/Google - png 0.png"),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                   Expanded(
-                     child: Text(
-                      auth.checkSignInMethod()['email'],
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                                       ),
-                   )
-                ],
-              ):
-              InkWell(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>   CheckPasswordView(),
-                  ),
-                ),
-                child: getSettingType(icon: Icons.password, text: 'Password'),
-              )
-              ,
+              auth.checkSignInMethod()['providerId'] == 'google.com'
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/images/Google - png 0.png"),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Text(
+                            auth.checkSignInMethod()['email'],
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        )
+                      ],
+                    )
+                  : InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CheckPasswordView(),
+                        ),
+                      ),
+                      child: getSettingType(
+                          icon: Icons.password, text: 'Password'),
+                    ),
               const Divider(
                 color: Colors.white,
                 indent: 35,
