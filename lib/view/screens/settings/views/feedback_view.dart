@@ -1,8 +1,22 @@
+import 'package:fitness_app/core/services/authentication/auth_service.dart';
+import 'package:fitness_app/core/shared/componans.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class FeedbackView extends StatelessWidget {
-  const FeedbackView({super.key});
+class FeedbackView extends StatefulWidget {
+
+   FeedbackView({super.key});
+
+  @override
+  State<FeedbackView> createState() => _FeedbackViewState();
+}
+
+class _FeedbackViewState extends State<FeedbackView> {
+  AuthService auth=AuthService();
+
+  var controller=TextEditingController();
+
+  double stars=0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +53,18 @@ class FeedbackView extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             RatingBar.builder(
-              initialRating: 0,
+              initialRating: stars,
               minRating: 0.5,
               direction: Axis.horizontal,
               allowHalfRating: true,
               itemCount: 5,
               itemSize: 40.0,
               itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-              onRatingUpdate: (rating) {
+              onRatingUpdate: (value)  {
+                stars=value;
+                setState(() {
+
+                });
                 // دي مطلوبه للوجيك بتاع لو غيرت التقييم ممكن نسيبها فاضيه عادي مش مهم
               },
               unratedColor: Colors.grey,
@@ -62,6 +80,7 @@ class FeedbackView extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             TextField(
+              controller: controller,
               maxLines: 3,
               decoration: InputDecoration(
                 filled: true,
@@ -78,6 +97,13 @@ class FeedbackView extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 //هنا المفروض نحط اللوجيك بتاع الفيد باك بحيث لما يضغط يودي الرساله عالايميل
+                setState(() {
+                  if(controller.text.isNotEmpty||stars!=0) {
+                    defaultToast('Feedback Saved😊', Colors.pinkAccent);
+                    controller.text='';
+                    stars=0;
+                  }
+                });
               },
               child: const Text('Submit Feedback'),
             ),

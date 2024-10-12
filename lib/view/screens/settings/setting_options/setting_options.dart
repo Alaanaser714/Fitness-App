@@ -47,8 +47,7 @@ class SettingOptions extends StatelessWidget {
                   //Acount page
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) =>  AccountView()),
+                    MaterialPageRoute(builder: (context) => AccountView()),
                   ),
                   child: getSettingType(icon: Icons.person, text: 'Account'),
                 ),
@@ -81,10 +80,11 @@ class SettingOptions extends StatelessWidget {
                 const SizedBox(height: 10),
                 InkWell(
                     //Feedback page
+
                     onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const FeedbackView(),
+                            builder: (context) => FeedbackView(),
                           ),
                         ),
                     child:
