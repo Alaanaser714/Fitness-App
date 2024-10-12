@@ -5,6 +5,9 @@ import 'package:fitness_app/view/screens/settings/setting_widgets/setting_types.
 import 'package:flutter/material.dart';
 
 import '../../../../core/services/authentication/auth_service.dart';
+import '../views/account_view.dart';
+import '../views/feedback_view.dart';
+import '../views/help_view.dart';
 
 class SettingOptions extends StatelessWidget {
   AuthService auth = AuthService();
