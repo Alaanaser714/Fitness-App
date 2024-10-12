@@ -42,6 +42,7 @@ dependencies:
   fluttertoast: ^8.2.8
   awesome_dialog: ^3.2.1
   flutter_rating_bar: ^4.0.1
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
