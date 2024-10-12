@@ -122,7 +122,6 @@ return userCredential;
          print(onError.toString());
         });
 
-
   }
 
   Map checkSignInMethod() {
