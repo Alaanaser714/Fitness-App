@@ -15,7 +15,8 @@ class Login_Screen extends StatefulWidget {
 
 class _Login_ScreenState extends State<Login_Screen> {
   AuthService auth = AuthService();
-  final bool _isObscured = true;
+  bool _isObscured = true;
+
   bool isLogin = false;
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
@@ -96,19 +97,33 @@ class _Login_ScreenState extends State<Login_Screen> {
                         }
                         return null;
                       },
-                      obscureText: _isObscured,
+                      obscureText: _isObscured, 
                       controller: _passwordcontroller,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(
                           Icons.security,
                           color: Colors.white,
                         ),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscured
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscured = !_isObscured; 
+                            });
+                          },
+                        ),
                         labelText: 'enter password',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                        labelStyle: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       style: const TextStyle(color: Colors.white),
                     ),
