@@ -9,13 +9,12 @@ class QuadsWorkout extends StatelessWidget {
     return Scaffold(
             backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
-        title: const Center(
-          child: Text(
-            'Quads',
-            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Quads',
+          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(

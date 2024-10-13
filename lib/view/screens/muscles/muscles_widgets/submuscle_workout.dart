@@ -17,7 +17,6 @@ class SubMuscleWorkouts extends StatelessWidget {
         width: double.infinity,
         height: 220,
         decoration: BoxDecoration(
-            color: Colors.white,
             image: DecorationImage(
               image: AssetImage(subMuscleImage),
               fit: BoxFit.cover,
@@ -27,7 +26,7 @@ class SubMuscleWorkouts extends StatelessWidget {
           child: Text(
             subMuscleName,
             style: const TextStyle(
-              fontSize: 30,
+              fontSize: 35,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),

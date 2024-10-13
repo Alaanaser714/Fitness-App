@@ -9,13 +9,12 @@ class ChestWorkouts extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
-        title: const Center(
-          child: Text(
-            'Chest',
-            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Chest',
+          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
@@ -26,7 +25,9 @@ class ChestWorkouts extends StatelessWidget {
               height: 15,
             ),
             WorkoutOption(workout: 'Dumbell bench press'),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             WorkoutOption(workout: 'Butterfly'),
           ],
         ),

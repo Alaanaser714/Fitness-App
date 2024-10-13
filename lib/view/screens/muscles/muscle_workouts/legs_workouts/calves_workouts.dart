@@ -7,15 +7,14 @@ class CalvesWorkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
-        title: const Center(
-          child: Text(
-            'Calves',
-            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Calves',
+          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
@@ -26,7 +25,9 @@ class CalvesWorkout extends StatelessWidget {
               height: 15,
             ),
             WorkoutOption(workout: 'Calves Raises'),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             WorkoutOption(workout: 'Seated Calves Raises'),
           ],
         ),

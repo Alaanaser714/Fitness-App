@@ -13,13 +13,12 @@ class LegsWorkouts extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
-        title: const Center(
-          child: Text(
-            'Legs',
-            style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
-          ),
+        title: const Text(
+          'Legs',
+          style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
@@ -46,8 +45,7 @@ class LegsWorkouts extends StatelessWidget {
               height: 10,
             ),
             SubMuscleWorkouts(
-              subMuscleImage:
-                  'assets/images/istockphoto-498528869-612x612.jpg',
+              subMuscleImage: 'assets/images/istockphoto-498528869-612x612.jpg',
               subMuscleName: 'Glutes',
               submusclePage: GlutesWorkouts(),
             ),
@@ -55,7 +53,8 @@ class LegsWorkouts extends StatelessWidget {
               height: 10,
             ),
             SubMuscleWorkouts(
-              subMuscleImage: 'assets/images/depositphotos_47045373-stock-photo-calves-female-anatomy-muscles.jpg',
+              subMuscleImage:
+                  'assets/images/depositphotos_47045373-stock-photo-calves-female-anatomy-muscles.jpg',
               subMuscleName: 'Calves',
               submusclePage: CalvesWorkout(),
             )
