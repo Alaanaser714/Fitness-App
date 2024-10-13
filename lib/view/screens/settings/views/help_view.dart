@@ -84,7 +84,7 @@ class HelpView extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const FeedbackView(),
+                      builder: (context) =>   FeedbackView(),
                     ),
                   );
                 },
