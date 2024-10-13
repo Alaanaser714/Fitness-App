@@ -11,6 +11,8 @@ class Register_Screen extends StatefulWidget {
 }
 
 class _Register_ScreenState extends State<Register_Screen> {
+  bool _isObscuredPassword = true;
+  bool _isObscuredConfirmPassword = true;
   bool isRegister = false;
   AuthService auth = AuthService();
   var formKey = GlobalKey<FormState>();
@@ -57,6 +59,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
+                // حقل اسم المستخدم
                 Container(
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
@@ -90,6 +93,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
+
                 Container(
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
@@ -111,7 +115,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                           Icons.email,
                           color: Colors.white,
                         ),
-                        labelText: 'Enter tour email address',
+                        labelText: 'Enter your email address',
                         border: InputBorder.none,
                         labelStyle: TextStyle(
                             fontSize: 15,
@@ -123,6 +127,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
+
                 Container(
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
@@ -138,16 +143,29 @@ class _Register_ScreenState extends State<Register_Screen> {
                       }
                       return null;
                     },
-                    obscureText: true,
                     controller: _passwordcontroller,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(
+                    obscureText: _isObscuredPassword,
+                    decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscuredPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscuredPassword = !_isObscuredPassword;
+                            });
+                          },
+                        ),
+                        prefixIcon: const Icon(
                           Icons.password,
                           color: Colors.white,
                         ),
                         labelText: 'Enter a password',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -172,16 +190,30 @@ class _Register_ScreenState extends State<Register_Screen> {
                       }
                       return null;
                     },
-                    obscureText: true,
+                    obscureText: _isObscuredConfirmPassword,
                     controller: _confirmpasswordcontroller,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(
+                    decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscuredConfirmPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscuredConfirmPassword =
+                                  !_isObscuredConfirmPassword;
+                            });
+                          },
+                        ),
+                        prefixIcon: const Icon(
                           Icons.password,
                           color: Colors.white,
                         ),
                         labelText: 'confirm password',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -191,6 +223,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
+
                 Container(
                   height: 50,
                   width: 400,
@@ -214,9 +247,6 @@ class _Register_ScreenState extends State<Register_Screen> {
                               auth.signOut();
                               defaultToast("Go to Verify your email",
                                   Colors.deepOrangeAccent);
-                              // Timer(Duration(seconds: 1), () {
-                              //
-                              // });
                               Navigator.pop(context);
                             }).catchError((onError) {
                               setState(() {
@@ -249,4 +279,3 @@ class _Register_ScreenState extends State<Register_Screen> {
     );
   }
 }
-// باسم هتعمل الباسورد وهتعمل validation
