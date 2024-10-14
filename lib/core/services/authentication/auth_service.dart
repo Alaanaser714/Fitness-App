@@ -1,14 +1,17 @@
 
-
 // ignore_for_file: avoid_print, body_might_complete_normally_catch_error, deprecated_member_use
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../fire_store&storage/fire_store&storage.dart';
+
 class AuthService{
   final FirebaseAuth firebaseAuth=FirebaseAuth.instance;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
   final FirebaseFirestore fireStore=FirebaseFirestore.instance;
+  FireStoreStorage fireStoreStorage=FireStoreStorage();
 
   Future<UserCredential> signInWithEmailAndPassword({required String email,required String password}) async {
     return await firebaseAuth
@@ -36,18 +39,26 @@ class AuthService{
     UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
 
     User? user = userCredential.user;
-
     if (user != null) {
-      // Get the user's display name
-      String? name = user.displayName;
-      String? email = user.email;
-      String? id = user.uid;
-      fireStore.collection("Users").doc(id).set({
-        'uid':id,
-        'email':email,
-        'name':name,
-        'imageProfile':'https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg'
+      fireStoreStorage.getProfileData().then((onValue){
+        if(onValue.length==0){
+          String? name = user.displayName;
+          String? email = user.email;
+          String? id = user.uid;
+          fireStore.collection("Users").doc(id).set({
+            'uid':id,
+            'email':email,
+            'name':name,
+            'imageProfile':'https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2264922221.jpg'
+          });
+        }
+
+      }).catchError((onError){
+
       });
+
+
+
 
 
 
@@ -58,7 +69,6 @@ return userCredential;
 
 
   }
-
 
   Future<UserCredential> signUpWithEmailAndPassword({required String email,required String password,required String name}) async {
     return await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password).then((onValue) async {
@@ -83,19 +93,6 @@ return userCredential;
   Future<void> signOut() async {
   await firebaseAuth.signOut();
 }
-
-  Future<bool> checkIfEmailExists(String email) async {
-    try {
-      // Fetch sign-in methods for the email
-      List<String> signInMethods = await FirebaseAuth.instance.fetchSignInMethodsForEmail(email);
-
-      // If the list is not empty, the email exists
-      return signInMethods.isNotEmpty;
-    } catch (e) {
-      print('Error checking if email exists: $e');
-      return false;
-    }
-  }
 
   Future<bool> updatePassword(String newPassword) async {
     User? user = firebaseAuth.currentUser;
@@ -127,8 +124,6 @@ return userCredential;
 
   Map checkSignInMethod() {
     User? user = firebaseAuth.currentUser;
-
-
       for (UserInfo provider in user!.providerData) {
         print('Provider ID: ${provider.providerId}');
         print('Email: ${provider.email}');
@@ -136,6 +131,8 @@ return userCredential;
         return {
           'providerId':provider.providerId,
           'email':provider.email,
+          'name':provider.displayName,
+          'imageProfile':provider.photoURL
         };
       }
      return {};
