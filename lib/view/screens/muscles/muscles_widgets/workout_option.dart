@@ -1,15 +1,17 @@
 // ignore_for_file: deprecated_member_use, duplicate_ignore
 
 import 'package:fitness_app/view/screens/muscles/muscles_widgets/workout_info.dart';
+import 'package:fitness_app/view/screens/muscles/muscles_widgets/workout_video_page.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutOption extends StatelessWidget {
   const WorkoutOption({
     super.key,
     required this.workout,
+    required this.workoutUrl,
   });
   final String workout;
-
+  final String workoutUrl;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,7 +55,16 @@ class WorkoutOption extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => workoutVideoPlayer(
+                      workoutVideoUrl: workoutUrl,
+                    ),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
                 shape: RoundedRectangleBorder(

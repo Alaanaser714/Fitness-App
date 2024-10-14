@@ -25,11 +25,19 @@ class ReardeltoidWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Cable Cross Reverse Fly'),
+            WorkoutOption(
+              workout: 'Cable Cross Reverse Fly',
+              workoutUrl:
+                  'https://youtube.com/shorts/bkejPHrPkmA?si=V7pgZgnFGLHPKX3k',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Machine Reverse Fly'),
+            WorkoutOption(
+              workout: 'Machine Reverse Fly',
+              workoutUrl:
+                  'https://youtube.com/shorts/P5CXx_jgTDE?si=inL3eHuCJA_DS7UY',
+            ),
           ],
         ),
       ),

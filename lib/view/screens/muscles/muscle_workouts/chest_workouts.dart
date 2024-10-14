@@ -24,11 +24,19 @@ class ChestWorkouts extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Dumbell bench press'),
+            WorkoutOption(
+              workout: 'Dumbell bench press',
+              workoutUrl:
+                  'https://youtube.com/shorts/1V3vpcaxRYQ?si=rBXjn1lRUoU49E1x',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Butterfly'),
+            WorkoutOption(
+              workout: 'Butterfly',
+              workoutUrl:
+                  'https://youtube.com/shorts/g3T7LsEeDWQ?si=Ywiw9vvxnmGJJgND',
+            ),
           ],
         ),
       ),

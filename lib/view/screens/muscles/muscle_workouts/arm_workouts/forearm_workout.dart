@@ -7,9 +7,9 @@ class ForearmWorkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
-         centerTitle: true,
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
         title: const Text(
@@ -24,9 +24,19 @@ class ForearmWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Bar Wrist Curls'),
-            SizedBox(height: 10,),
-            WorkoutOption(workout: 'Arm Reverse Wrist Curl'),
+            WorkoutOption(
+              workout: 'Bar Wrist Curls',
+              workoutUrl:
+                  'https://youtube.com/shorts/n-n8rrOM1RU?si=j0-FKyYAzAIIly_S',
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            WorkoutOption(
+              workout: 'Arm Reverse Wrist Curl',
+              workoutUrl:
+                  'https://youtube.com/shorts/NcDp9dkWr7g?si=jmaGxne50slavc0H',
+            ),
           ],
         ),
       ),
