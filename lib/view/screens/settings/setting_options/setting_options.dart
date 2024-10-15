@@ -1,10 +1,12 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:fitness_app/core/services/authentication/auth_gate.dart';
+
 import 'package:fitness_app/view/screens/settings/views/notifications_view.dart';
 import 'package:fitness_app/view/screens/settings/setting_widgets/setting_types.dart';
-import 'package:flutter/material.dart';
 
+
+import 'package:flutter/material.dart';
 import '../../../../core/services/authentication/auth_service.dart';
 import '../views/account_view.dart';
 import '../views/edit.dart';
