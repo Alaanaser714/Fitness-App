@@ -22,16 +22,17 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(
           "Forgot Password",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.orange,
             fontSize: 25,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.orange),
       ),
       body: Column(
         children: [
@@ -39,17 +40,15 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             height: MediaQuery.of(context).size.height * 0.05,
           ),
           Image.asset(
-            "assets/images/logo.png",
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.04,
+            "assets/images/fitness_icon.png",
+            width: 100,
           ),
           const Text(
             "Please enter your email to recover the password",
             style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.grey,
             ),
           ),
           SizedBox(
@@ -71,7 +70,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   controller: _emailcontroller,
                   decoration: const InputDecoration(
                       prefixIcon: Icon(
-                        Icons.person,
+                        Icons.email,
                         color: Colors.white,
                       ),
                       hintText: 'enter your email ',
@@ -141,7 +140,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.black87),
                 )),
           ),
         ],

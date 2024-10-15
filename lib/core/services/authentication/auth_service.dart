@@ -1,5 +1,5 @@
 
-// ignore_for_file: avoid_print, body_might_complete_normally_catch_error, deprecated_member_use
+// ignore_for_file: avoid_print, body_might_complete_normally_catch_error, deprecated_member_use, prefer_is_empty
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

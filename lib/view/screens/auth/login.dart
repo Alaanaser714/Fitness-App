@@ -15,7 +15,8 @@ class Login_Screen extends StatefulWidget {
 
 class _Login_ScreenState extends State<Login_Screen> {
   AuthService auth = AuthService();
-  final bool _isObscured = true;
+  bool _isObscured = true;
+
   bool isLogin = false;
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
@@ -35,14 +36,15 @@ class _Login_ScreenState extends State<Login_Screen> {
                     height: MediaQuery.of(context).size.height * 0.15,
                   ),
                   Image.asset(
-                    "assets/images/logo.png",
+                    "assets/images/fitness_icon.png",
+                    width: 100,
                   ),
                   const Text(
-                    "login to your account",
+                    "Log In to Your Fitness Journey",
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.orange),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.04,
@@ -51,7 +53,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     height: 45,
                     width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(15),
                       border: Border.all(width: 1, color: Colors.white),
                       color: const Color.fromARGB(255, 141, 139, 139),
                     ),
@@ -68,9 +70,9 @@ class _Login_ScreenState extends State<Login_Screen> {
                           Icons.email,
                           color: Colors.white,
                         ),
-                        labelText: 'enter you email',
+                        hintText: 'enter you email',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        hintStyle: TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
@@ -85,7 +87,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     height: 45,
                     width: MediaQuery.of(context).size.width * 0.9,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(15),
                       border: Border.all(width: 1, color: Colors.white),
                       color: const Color.fromARGB(255, 141, 139, 139),
                     ),
@@ -98,17 +100,31 @@ class _Login_ScreenState extends State<Login_Screen> {
                       },
                       obscureText: _isObscured,
                       controller: _passwordcontroller,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.security,
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(
+                          Icons.lock,
                           color: Colors.white,
                         ),
-                        labelText: 'enter password',
-                        border: InputBorder.none,
-                        labelStyle: TextStyle(
-                            fontSize: 15,
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscured
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscured = !_isObscured;
+                            });
+                          },
+                        ),
+                        hintText: 'enter password',
+                        border: InputBorder.none,
+                        hintStyle: const TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       style: const TextStyle(color: Colors.white),
                     ),
@@ -125,7 +141,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                         },
                         child: const Text("Forget password?",
                             style:
-                                TextStyle(fontSize: 15, color: Colors.white)),
+                                TextStyle(fontSize: 15, color: Colors.orange)),
                       ),
                     ],
                   ),
@@ -179,7 +195,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                    color: Colors.black87),
                               )),
                   ),
                   SizedBox(
@@ -190,7 +206,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     children: [
                       const Text(
                         "Don't have an account ?",
-                        style: TextStyle(fontSize: 15, color: Colors.white),
+                        style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                       const SizedBox(
                         width: 10,
@@ -215,7 +231,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                   ),
                   const Text(
                     "Alternatively login with:",
-                    style: TextStyle(fontSize: 13, color: Colors.white),
+                    style: TextStyle(fontSize: 13, color: Colors.grey),
                   ),
                   const SizedBox(
                     height: 10,

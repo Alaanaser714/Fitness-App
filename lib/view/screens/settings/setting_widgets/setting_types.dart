@@ -23,7 +23,7 @@ Widget getSettingType(
         style: TextStyle(
             color: textColor ?? Colors.white,
             fontSize: 16,
-            fontWeight: FontWeight.bold),
+            fontWeight: FontWeight.w400),
       ),
     ),
   );
