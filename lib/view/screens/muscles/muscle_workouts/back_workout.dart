@@ -24,11 +24,17 @@ class BackWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Lat Pull Down'),
-            SizedBox(
-              height: 10,
+            WorkoutOption(
+              workout: 'Lat Pull Down',
+              workoutUrl:
+                  'https://youtube.com/shorts/hnSqbBk15tw?si=ejDReq2WOigWlWuc',
             ),
-            WorkoutOption(workout: 'One Arm Dumbell Row'),
+            SizedBox(height: 10),
+            WorkoutOption(
+              workout: 'One Arm Dumbell Row',
+              workoutUrl:
+                  'https://youtube.com/shorts/qN54-QNO1eQ?si=h9_HlD5WjZKtgI-e',
+            ),
           ],
         ),
       ),

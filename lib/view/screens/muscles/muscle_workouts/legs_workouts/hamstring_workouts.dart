@@ -7,9 +7,9 @@ class HamstringWorkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
-         centerTitle: true,
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
         title: const Text(
@@ -24,9 +24,19 @@ class HamstringWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Leg Curl'),
-            SizedBox(height: 10,),
-            WorkoutOption(workout: 'Romanian Deadlift'),
+            WorkoutOption(
+              workout: 'Leg Curl',
+              workoutUrl:
+                  'https://youtube.com/shorts/ANKSmhT0dTk?si=1Q3_BW4Ke5eAHj_E',
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            WorkoutOption(
+              workout: 'Romanian Deadlift',
+              workoutUrl:
+                  'https://youtube.com/shorts/5rIqP63yWFg?si=CzlUSGpQFx9EmtQ6',
+            ),
           ],
         ),
       ),

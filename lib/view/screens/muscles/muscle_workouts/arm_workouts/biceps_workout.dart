@@ -24,15 +24,27 @@ class BicepsWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Dumbell Rows'),
+            WorkoutOption(
+              workout: 'Dumbbell Curls',
+              workoutUrl:
+                  'https://youtube.com/shorts/iui51E31sX8?si=w8ALC1jmppm1dRiM',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Dumbbell Concentration Curl'),
+            WorkoutOption(
+              workout: 'Dumbbell Concentration Curl',
+              workoutUrl:
+                  'https://youtube.com/shorts/cHxRJdSVIkA?si=_t0UJG0pUApJXFO7',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Dumbbell hammer Curl'),
+            WorkoutOption(
+              workout: 'Dumbbell hammer Curl',
+              workoutUrl:
+                  'https://youtube.com/shorts/jdYGDzCuGE4?si=Gg-CV0NX5L4xtCXx',
+            ),
           ],
         ),
       ),

@@ -7,7 +7,7 @@ class FrontdeltoidWorkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
@@ -25,9 +25,19 @@ class FrontdeltoidWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Dumbell Shoulder Press'),
-            SizedBox(height: 10,),
-            WorkoutOption(workout: 'Dumbell Shoulder raises'),
+            WorkoutOption(
+              workout: 'Dumbell Shoulder Press',
+              workoutUrl:
+                  'https://youtube.com/shorts/OLePvpxQEGk?si=BxbfyQmuRywj5CvJ',
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            WorkoutOption(
+              workout: 'Dumbell Shoulder raises',
+              workoutUrl:
+                  'https://youtube.com/shorts/_6oXH8ZbB5M?si=iXPdnTYUMxOh0tJN',
+            ),
           ],
         ),
       ),

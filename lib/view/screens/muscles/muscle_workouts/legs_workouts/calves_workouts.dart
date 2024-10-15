@@ -24,11 +24,19 @@ class CalvesWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Calves Raises'),
+            WorkoutOption(
+              workout: 'Calves Raises',
+              workoutUrl:
+                  'https://youtube.com/shorts/9NXf0SzOZeY?si=MncR_jzduHGIvc-X',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Seated Calves Raises'),
+            WorkoutOption(
+              workout: 'Seated Calves Raises',
+              workoutUrl:
+                  'https://youtube.com/shorts/vCOlZ-zk80o?si=R_0ynsyAzSUb0n18',
+            ),
           ],
         ),
       ),

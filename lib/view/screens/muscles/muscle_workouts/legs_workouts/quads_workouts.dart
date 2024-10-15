@@ -7,9 +7,9 @@ class QuadsWorkout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
-         centerTitle: true,
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
         title: const Text(
@@ -24,9 +24,19 @@ class QuadsWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Leg Extension'),
-            SizedBox(height: 10,),
-            WorkoutOption(workout: 'Leg Press'),
+            WorkoutOption(
+              workout: 'Leg Extension',
+              workoutUrl:
+                  'https://youtube.com/shorts/ztNBgrGy6FQ?si=B23Zgk13mH0HvRNr',
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            WorkoutOption(
+              workout: 'Leg Press',
+              workoutUrl:
+                  'https://youtube.com/shorts/nDh_BlnLCGc?si=lyEEqCm4_bNU7fRi',
+            ),
           ],
         ),
       ),

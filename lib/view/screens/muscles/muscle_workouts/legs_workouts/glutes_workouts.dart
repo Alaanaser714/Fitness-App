@@ -7,9 +7,9 @@ class GlutesWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: const Color.fromARGB(255, 29, 31, 33),
+      backgroundColor: const Color.fromARGB(255, 29, 31, 33),
       appBar: AppBar(
-         centerTitle: true,
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 29, 31, 33),
         iconTheme: const IconThemeData(color: Colors.orange),
         title: const Text(
@@ -24,9 +24,19 @@ class GlutesWorkouts extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Squats'),
-            SizedBox(height: 10,),
-            WorkoutOption(workout: 'Hip Thrust'),
+            WorkoutOption(
+              workout: 'Squats',
+              workoutUrl:
+                  'https://youtube.com/shorts/PPmvh7gBTi0?si=yQ70IfFLkEkk7r9L',
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            WorkoutOption(
+              workout: 'Hip Thrust',
+              workoutUrl:
+                  'https://youtube.com/shorts/W86oVlnLqY4?si=mmMC4NXvGwbLzqb-',
+            ),
           ],
         ),
       ),

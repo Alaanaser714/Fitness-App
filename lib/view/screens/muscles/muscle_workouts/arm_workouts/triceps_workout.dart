@@ -24,11 +24,19 @@ class TricepsWorkout extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            WorkoutOption(workout: 'Rope Pushdown'),
+            WorkoutOption(
+              workout: 'Rope Pushdown',
+              workoutUrl:
+                  'https://youtube.com/shorts/rBz89XjsE24?si=JpUgheJGt_VoenAs',
+            ),
             SizedBox(
               height: 10,
             ),
-            WorkoutOption(workout: 'Skull Crucher'),
+            WorkoutOption(
+              workout: 'Skull Crucher',
+              workoutUrl:
+                  'https://youtube.com/shorts/zR9gty7LUxE?si=Xc8PRDGvs3Du1Qo3',
+            ),
           ],
         ),
       ),
