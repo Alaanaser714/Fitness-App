@@ -11,6 +11,8 @@ class Register_Screen extends StatefulWidget {
 }
 
 class _Register_ScreenState extends State<Register_Screen> {
+  bool _isObscuredPassword = true;
+  bool _isObscuredConfirmPassword = true;
   bool isRegister = false;
   AuthService auth = AuthService();
   var formKey = GlobalKey<FormState>();
@@ -38,21 +40,22 @@ class _Register_ScreenState extends State<Register_Screen> {
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 Image.asset(
-                  "assets/images/logo.png",
+                  "assets/images/fitness_icon.png",
+                  width: 100,
                 ),
                 const Text(
-                  "create an account",
+                  "Create Your Fitness Account",
                   style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.orange),
                 ),
                 const Text(
-                  "Help us finish setting up your account",
+                  "Join us and start your fitness journey today!",
                   style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -61,7 +64,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
+                    borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 1, color: Colors.white),
                     color: const Color.fromARGB(255, 141, 139, 139),
                   ),
@@ -78,9 +81,9 @@ class _Register_ScreenState extends State<Register_Screen> {
                           Icons.person,
                           color: Colors.white,
                         ),
-                        labelText: 'User name',
+                        hintText: 'User name',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        hintStyle: TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -94,7 +97,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
+                    borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 1, color: Colors.white),
                     color: const Color.fromARGB(255, 141, 139, 139),
                   ),
@@ -111,9 +114,9 @@ class _Register_ScreenState extends State<Register_Screen> {
                           Icons.email,
                           color: Colors.white,
                         ),
-                        labelText: 'Enter tour email address',
+                        hintText: 'Enter your email address',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        hintStyle: TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -127,7 +130,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
+                    borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 1, color: Colors.white),
                     color: const Color.fromARGB(255, 141, 139, 139),
                   ),
@@ -138,16 +141,29 @@ class _Register_ScreenState extends State<Register_Screen> {
                       }
                       return null;
                     },
-                    obscureText: true,
                     controller: _passwordcontroller,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.password,
+                    obscureText: _isObscuredPassword,
+                    decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscuredPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscuredPassword = !_isObscuredPassword;
+                            });
+                          },
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.lock,
                           color: Colors.white,
                         ),
-                        labelText: 'Enter a password',
+                        hintText: 'Enter a password',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -161,7 +177,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                   height: 45,
                   width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
+                    borderRadius: BorderRadius.circular(15),
                     border: Border.all(width: 1, color: Colors.white),
                     color: const Color.fromARGB(255, 141, 139, 139),
                   ),
@@ -172,16 +188,30 @@ class _Register_ScreenState extends State<Register_Screen> {
                       }
                       return null;
                     },
-                    obscureText: true,
+                    obscureText: _isObscuredConfirmPassword,
                     controller: _confirmpasswordcontroller,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.password,
+                    decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscuredConfirmPassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscuredConfirmPassword =
+                                  !_isObscuredConfirmPassword;
+                            });
+                          },
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.lock,
                           color: Colors.white,
                         ),
-                        labelText: 'confirm password',
+                        hintText: 'confirm password',
                         border: InputBorder.none,
-                        labelStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold)),
@@ -214,9 +244,6 @@ class _Register_ScreenState extends State<Register_Screen> {
                               auth.signOut();
                               defaultToast("Go to Verify your email",
                                   Colors.deepOrangeAccent);
-                              // Timer(Duration(seconds: 1), () {
-                              //
-                              // });
                               Navigator.pop(context);
                             }).catchError((onError) {
                               setState(() {
@@ -238,7 +265,7 @@ class _Register_ScreenState extends State<Register_Screen> {
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: Colors.black87),
                             )),
                 ),
               ],
@@ -249,4 +276,3 @@ class _Register_ScreenState extends State<Register_Screen> {
     );
   }
 }
-// باسم هتعمل الباسورد وهتعمل validation
