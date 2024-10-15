@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 "Welcome to Your Fitness App",
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Colors.orange,
                 ),

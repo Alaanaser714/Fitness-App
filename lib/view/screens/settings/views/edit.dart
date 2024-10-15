@@ -24,6 +24,7 @@ class edit extends StatefulWidget {
 }
 
 class _editState extends State<edit> {
+  AuthService auth = AuthService();
   final _firstname = TextEditingController();
   final _lastname = TextEditingController();
   final _email = TextEditingController();
@@ -351,6 +352,7 @@ class _editState extends State<edit> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .02,
                             ),
+                           if (!(auth.checkSignInMethod()['providerId'].toString().compareTo('google.com')==0))
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20.0),

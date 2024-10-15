@@ -42,7 +42,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                   const Text(
                     "Log In to Your Fitness Journey",
                     style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 23,
                         fontWeight: FontWeight.bold,
                         color: Colors.orange),
                   ),
