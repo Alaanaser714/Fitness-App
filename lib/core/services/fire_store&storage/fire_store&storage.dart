@@ -1,4 +1,9 @@
+//ignore_for_file: no_leading_underscores_for_local_identifiers
+
+// ignore_for_file: file_names, avoid_print, prefer_interpolation_to_compose_strings
+
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';

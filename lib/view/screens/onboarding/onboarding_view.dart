@@ -61,7 +61,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                          color: Colors.grey,
                         ),
                       ),
                     ],

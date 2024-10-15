@@ -26,7 +26,7 @@ class SubMuscleWorkouts extends StatelessWidget {
           child: Text(
             subMuscleName,
             style: const TextStyle(
-              fontSize: 35,
+              fontSize: 40,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),

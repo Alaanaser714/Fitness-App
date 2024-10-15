@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                   child: Text(
                     homeList[index].title!,
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 40,
                       color: const Color.fromARGB(255, 25, 3, 3),
                       fontWeight: FontWeight.bold,
                     ),

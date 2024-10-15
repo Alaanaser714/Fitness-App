@@ -14,11 +14,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Widget startScreen() {
-    if (CashHelper.getData('splash')!=null) {
+    if (CashHelper.getData('splash') != null) {
       return const AuthGate();
     }
     return const OnboardingView();
   }
+
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
@@ -39,22 +40,25 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: 186,
+                height: MediaQuery.of(context).size.height * .2,
               ),
-              Image.asset("assets/images/splash_logo.png"),
+              Image.asset(
+                "assets/images/fitness_icon.png",
+                width: MediaQuery.of(context).size.width * 0.7,
+              ),
               Text(
-                "Helios Sports Tech",
+                "Welcome to Your Fitness App",
                 style: TextStyle(
                   fontSize: 28,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.orange,
                 ),
               ),
               SizedBox(
-                height: 6,
+                height: 10,
               ),
               Text(
-                "Here To Compete.",
+                "Your journey to a healthier, stronger you starts here!",
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
