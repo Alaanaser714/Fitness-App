@@ -2,6 +2,8 @@
 
 import 'package:fitness_app/view/screens/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
+import '../../../core/services/authentication/auth_gate.dart';
+import '../../../core/shared/cash_helper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,13 +13,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  Widget startScreen() {
+    if (CashHelper.getData('splash')!=null) {
+      return const AuthGate();
+    }
+    return const OnboardingView();
+  }
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => OnboardingView(),
+            builder: (context) => startScreen(),
           ));
     });
     super.initState();

@@ -1,13 +1,17 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:fitness_app/core/services/authentication/auth_gate.dart';
+
+import 'package:fitness_app/view/screens/settings/views/notifications_view.dart';
+import 'package:fitness_app/view/screens/settings/setting_widgets/setting_types.dart';
+
+
 import 'package:flutter/material.dart';
 import '../../../../core/services/authentication/auth_service.dart';
-import '../setting_widgets/setting_types.dart';
 import '../views/account_view.dart';
+import '../views/edit.dart';
 import '../views/feedback_view.dart';
 import '../views/help_view.dart';
-import '../views/notifications_view.dart';
 
 class SettingOptions extends StatelessWidget {
   AuthService auth = AuthService();
@@ -47,7 +51,8 @@ class SettingOptions extends StatelessWidget {
                   //Acount page
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AccountView()),
+                    MaterialPageRoute(
+                        builder: (context) =>  edit()),
                   ),
                   child: getSettingType(icon: Icons.person, text: 'Account'),
                 ),
@@ -80,11 +85,10 @@ class SettingOptions extends StatelessWidget {
                 const SizedBox(height: 10),
                 InkWell(
                     //Feedback page
-
                     onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => FeedbackView(),
+                            builder: (context) =>  FeedbackView(),
                           ),
                         ),
                     child:
@@ -130,13 +134,7 @@ class SettingOptions extends StatelessWidget {
                           TextButton(
                               onPressed: () {
                                 auth.signOut();
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AuthGate(),
-                                  ),
-                                  (route) => false,
-                                );
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => AuthGate(),), (route) => false,);
                               },
                               child: const Text(
                                 'Log Out',

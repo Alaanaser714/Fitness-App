@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/view/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import '../../../view/screens/auth/login.dart';
+import '../../shared/cash_helper.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -19,6 +20,7 @@ class AuthGate extends StatelessWidget {
               if (FirebaseAuth.instance.currentUser!.emailVerified) {
                 return HomeScreen();
               }
+            CashHelper.setData('splash', true);
               return const Login_Screen();
           },) ,
     );
